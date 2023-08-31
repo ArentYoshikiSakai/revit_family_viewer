@@ -5,7 +5,7 @@
         <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
         <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
         <ProjectGuid>{7F523541-0523-4D72-9887-3682C30E77CB}</ProjectGuid>
-        <OutputType>WinExe</OutputType>
+        <OutputType>Library</OutputType>
         <RootNamespace>revit_family_viewer</RootNamespace>
         <AssemblyName>revit_family_viewer</AssemblyName>
         <TargetFrameworkVersion>v4.8.1</TargetFrameworkVersion>
@@ -15,7 +15,7 @@
         <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     </PropertyGroup>
     <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
-        <PlatformTarget>AnyCPU</PlatformTarget>
+        <PlatformTarget>x64</PlatformTarget>
         <DebugSymbols>true</DebugSymbols>
         <DebugType>full</DebugType>
         <Optimize>false</Optimize>
@@ -34,6 +34,9 @@
         <WarningLevel>4</WarningLevel>
     </PropertyGroup>
     <ItemGroup>
+        <Reference Include="Autodesk.UI.Windows">
+          <HintPath>..\..\..\..\..\..\..\Program Files\Autodesk\Revit 2022\Autodesk.UI.Windows.dll</HintPath>
+        </Reference>
         <Reference Include="HelixToolkit.Wpf, Version=2.24.0.0, Culture=neutral, PublicKeyToken=52aa3500039caf0d, processorArchitecture=MSIL">
           <HintPath>..\packages\HelixToolkit.Wpf.2.24.0\lib\net462\HelixToolkit.Wpf.dll</HintPath>
         </Reference>
@@ -55,10 +58,7 @@
         <Reference Include="PresentationFramework" />
     </ItemGroup>
     <ItemGroup>
-        <ApplicationDefinition Include="App.xaml">
-            <Generator>MSBuild:Compile</Generator>
-            <SubType>Designer</SubType>
-        </ApplicationDefinition>
+        <Compile Include="Command\CreateRibbonTabCommand.cs" />
         <Compile Include="Command\Show3DViewerCommand.cs" />
         <Compile Include="Helpers\ConvertToMeshGeometry3DHelper.cs" />
         <Compile Include="ViewModel\ViewerViewModel.cs" />
@@ -66,20 +66,8 @@
           <DependentUpon>Your3DViewerControl.xaml</DependentUpon>
         </Compile>
         <Page Include="Abc.xaml" />
-        <Page Include="MainWindow.xaml">
-            <Generator>MSBuild:Compile</Generator>
-            <SubType>Designer</SubType>
-        </Page>
         <Compile Include="Abc.xaml.cs">
           <DependentUpon>Abc.xaml</DependentUpon>
-        </Compile>
-        <Compile Include="App.xaml.cs">
-            <DependentUpon>App.xaml</DependentUpon>
-            <SubType>Code</SubType>
-        </Compile>
-        <Compile Include="MainWindow.xaml.cs">
-            <DependentUpon>MainWindow.xaml</DependentUpon>
-            <SubType>Code</SubType>
         </Compile>
         <Page Include="Your3DViewerControl.xaml" />
     </ItemGroup>
@@ -98,11 +86,12 @@
         </EmbeddedResource>
     </ItemGroup>
     <ItemGroup>
-        <None Include="App.config" />
-        <None Include="packages.config" />
+      <Folder Include="Model" />
+      <Folder Include="Application" />
+      <Folder Include="View" />
     </ItemGroup>
     <ItemGroup>
-      <Folder Include="Model" />
+      <Content Include="revit_family_viewer.addin" />
     </ItemGroup>
     <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
