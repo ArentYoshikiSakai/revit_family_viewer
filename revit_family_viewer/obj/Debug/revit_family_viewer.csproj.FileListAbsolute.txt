@@ -92,3 +92,5 @@ C:\Users\ysakai\Documents\sakai\practice\revit_family_viewer\revit_family_viewer
 C:\Users\ysakai\Documents\sakai\practice\revit_family_viewer\revit_family_viewer\obj\Debug\revit_family_viewer.pdb
 C:\Users\ysakai\Documents\sakai\practice\revit_family_viewer\revit_family_viewer\bin\Debug\revit_family_viewer.dll
 C:\Users\ysakai\Documents\sakai\practice\revit_family_viewer\revit_family_viewer\obj\Debug\revit_family_viewer.dll
+C:\Users\ysakai\Documents\sakai\practice\revit_family_viewer\revit_family_viewer\obj\Debug\ViewerWindow.g.cs
+C:\Users\ysakai\Documents\sakai\practice\revit_family_viewer\revit_family_viewer\obj\Debug\ViewerWindow.baml

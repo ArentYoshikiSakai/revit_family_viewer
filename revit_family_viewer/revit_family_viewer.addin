@@ -8,4 +8,12 @@
         <VendorId>yoshikisakai0816</VendorId>
         <VendorDescription>Sakai</VendorDescription>
     </AddIn>
+    <AddIn Type="Application">
+        <Name>Create Ribbon</Name>
+        <FullClassName>revit_family_viewer.Application.CreateRibbonTabApplication</FullClassName>
+        <Assembly>""C:\Users\ysakai\Documents\sakai\practice\revit_family_viewer\revit_family_viewer\obj\Debug\revit_family_viewer.dll""</Assembly>
+        <AddInId>94BAB46C-5458-4401-A7F5-95F0811B2ED2</AddInId>
+        <VendorId>yoshikisakai0816</VendorId>
+        <VendorDescription>Sakai</VendorDescription>
+    </AddIn>
 </RevitAddIns>

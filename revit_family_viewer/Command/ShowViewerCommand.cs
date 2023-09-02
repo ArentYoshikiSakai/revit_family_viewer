@@ -10,19 +10,21 @@ using revit_family_viewer.Helpers;
 namespace revit_family_viewer.Command
 {
     [Transaction(TransactionMode.ReadOnly)]
-    public class Show3DViewerCommand : IExternalCommand
+    public class ShowViewerCommand : IExternalCommand
     {
         public Result Execute(ExternalCommandData commandData, ref string message, ElementSet elements)
         {
             // Revitのモデルのジオメトリを取得
             Document doc = commandData.Application.ActiveUIDocument.Document;
             // ... (ジオメトリを取得するコード)
-            
+
+            ViewerWindow dialog = new ViewerWindow() ;
+            dialog.ShowDialog() ;
 
             return Result.Succeeded;
         }
         
-        public void ShowGeometry3D(GeometryElement geomElem)
+        public void ShowGeometry(GeometryElement geomElem)
         {
             // ... (ジオメトリを取得するコード)
 

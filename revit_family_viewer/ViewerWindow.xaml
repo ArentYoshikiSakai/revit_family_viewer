@@ -1,0 +1,20 @@
+﻿<Window x:Class="revit_family_viewer.ViewerWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:helix="http://helix-toolkit.org/wpf"
+        xmlns:local="clr-namespace:revit_family_viewer"
+        xmlns:viewModel="clr-namespace:revit_family_viewer.ViewModel">
+    
+    <Window.DataContext>
+        <viewModel:ViewerViewModel />
+    </Window.DataContext>
+    <Grid>
+        <helix:HelixViewport3D>
+            <helix:HelixViewport3D.Children>
+                <helix:MeshVisual3D Content="{Binding ModelGeometry}">
+                </helix:MeshVisual3D>
+            </helix:HelixViewport3D.Children>
+        </helix:HelixViewport3D>
+
+    </Grid>
+</Window>

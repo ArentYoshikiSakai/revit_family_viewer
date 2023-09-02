@@ -58,9 +58,14 @@
         <Reference Include="PresentationFramework" />
     </ItemGroup>
     <ItemGroup>
+        <Compile Include="Application\CreateRibbonTabApplication.cs" />
         <Compile Include="Command\CreateRibbonTabCommand.cs" />
-        <Compile Include="Command\Show3DViewerCommand.cs" />
+        <Compile Include="Command\ShowViewerCommand.cs" />
+        <Compile Include="Data\FileData.cs" />
         <Compile Include="Helpers\ConvertToMeshGeometry3DHelper.cs" />
+        <Compile Include="ViewerWindow.xaml.cs">
+          <DependentUpon>ViewerWindow.xaml</DependentUpon>
+        </Compile>
         <Compile Include="ViewModel\ViewerViewModel.cs" />
         <Compile Include="Your3DViewerControl.xaml.cs">
           <DependentUpon>Your3DViewerControl.xaml</DependentUpon>
@@ -69,6 +74,7 @@
         <Compile Include="Abc.xaml.cs">
           <DependentUpon>Abc.xaml</DependentUpon>
         </Compile>
+        <Page Include="ViewerWindow.xaml" />
         <Page Include="Your3DViewerControl.xaml" />
     </ItemGroup>
     <ItemGroup>
@@ -87,8 +93,8 @@
     </ItemGroup>
     <ItemGroup>
       <Folder Include="Model" />
-      <Folder Include="Application" />
       <Folder Include="ReferenceApp\UiImages" />
+      <Folder Include="Utils" />
       <Folder Include="View" />
     </ItemGroup>
     <ItemGroup>
