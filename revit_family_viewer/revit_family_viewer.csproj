@@ -59,23 +59,26 @@
     </ItemGroup>
     <ItemGroup>
         <Compile Include="Application\CreateRibbonTabApplication.cs" />
-        <Compile Include="Command\CreateRibbonTabCommand.cs" />
+        <Compile Include="BindingUtils.cs" />
+        <Compile Include="Command\ShowFilteringCommand.cs" />
         <Compile Include="Command\ShowViewerCommand.cs" />
         <Compile Include="Data\FileData.cs" />
+        <Compile Include="FamilyTypeFilteringWindow.xaml.cs">
+          <DependentUpon>FamilyTypeFilteringWindow.xaml</DependentUpon>
+        </Compile>
         <Compile Include="Helpers\ConvertToMeshGeometry3DHelper.cs" />
+        <Compile Include="Service\CategoryService.cs" />
         <Compile Include="ViewerWindow.xaml.cs">
           <DependentUpon>ViewerWindow.xaml</DependentUpon>
         </Compile>
+        <Compile Include="ViewModel\FamilyTypeFilteringViewModel.cs" />
         <Compile Include="ViewModel\ViewerViewModel.cs" />
-        <Compile Include="Your3DViewerControl.xaml.cs">
-          <DependentUpon>Your3DViewerControl.xaml</DependentUpon>
+        <Compile Include="FilteringControl.xaml.cs">
+          <DependentUpon>FilteringControl.xaml</DependentUpon>
         </Compile>
-        <Page Include="Abc.xaml" />
-        <Compile Include="Abc.xaml.cs">
-          <DependentUpon>Abc.xaml</DependentUpon>
-        </Compile>
+        <Page Include="FamilyTypeFilteringWindow.xaml" />
         <Page Include="ViewerWindow.xaml" />
-        <Page Include="Your3DViewerControl.xaml" />
+        <Page Include="FilteringControl.xaml" />
     </ItemGroup>
     <ItemGroup>
         <Compile Include="Properties\AssemblyInfo.cs">
@@ -94,7 +97,6 @@
     <ItemGroup>
       <Folder Include="Model" />
       <Folder Include="ReferenceApp\UiImages" />
-      <Folder Include="Utils" />
       <Folder Include="View" />
     </ItemGroup>
     <ItemGroup>

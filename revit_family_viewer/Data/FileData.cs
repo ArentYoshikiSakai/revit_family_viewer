@@ -17,20 +17,15 @@ namespace revit_family_viewer.Data
       ImageFolderPath = FindFolderInParents( AssemblyPath, "Resources" ) ;
     }
     // common name
-    private string _projectName;
     public static string ProjectName { get; private set ; }
     
     // file name
-    private string _viewerTabImage;
     public static string ViewerTabImage { get; private set ; }
     
     // path
-    private string _assemblyPath;
     public static string AssemblyPath { get; private set ; }
-    private string _dllFilePath;
     public static string DllFilePath { get; private set ; }
-
-    private string _imageFolderPath;
+    
     public static string ImageFolderPath { get; private set ; }
     
     private static string FindFolderInParents( string startDir, string folderName )

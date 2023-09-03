@@ -1,13 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RevitAddIns>
-    <AddIn Type="Command">
-        <Name>Family Path Viewer</Name>
-        <FullClassName>revit_family_viewer.Command.CreateRibbonTabCommand</FullClassName>
-        <Assembly>""C:\Users\ysakai\Documents\sakai\practice\revit_family_viewer\revit_family_viewer\obj\Debug\revit_family_viewer.dll""</Assembly>
-        <AddInId>C5357A66-D50E-4F2F-8455-C85888F93C1D</AddInId>
-        <VendorId>yoshikisakai0816</VendorId>
-        <VendorDescription>Sakai</VendorDescription>
-    </AddIn>
     <AddIn Type="Application">
         <Name>Create Ribbon</Name>
         <FullClassName>revit_family_viewer.Application.CreateRibbonTabApplication</FullClassName>

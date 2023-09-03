@@ -45,7 +45,8 @@ namespace revit_family_viewer.Application
     {
       var pushButtonDataName = "PushButtonHello" ;
       var pushButtonDataText = "Hello World" ;
-      var className = "revit_family_viewer.Command.ShowViewerCommand";
+      var className = "revit_family_viewer.Command.ShowFilteringCommand";
+      // var className = "revit_family_viewer.Command.ShowViewerCommand";
       PushButtonData pushButtonData = new PushButtonData(pushButtonDataName, pushButtonDataText, FileData.DllFilePath, className);
       PushButton pushButton = _panel.AddItem(pushButtonData) as PushButton;
 

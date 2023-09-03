@@ -18,33 +18,40 @@ namespace revit_family_viewer.Command
             Document doc = commandData.Application.ActiveUIDocument.Document;
             // ... (ジオメトリを取得するコード)
 
-            ViewerWindow dialog = new ViewerWindow() ;
+            var viewModel = new ViewerWindow() ;
+            var dialog = new ViewerWindow() ;
             dialog.ShowDialog() ;
 
             return Result.Succeeded;
         }
         
-        public void ShowGeometry(GeometryElement geomElem)
+        public void ShowDialogWithoutArgs()
         {
-            // ... (ジオメトリを取得するコード)
-
-            // ジオメトリをHelix ToolkitのMeshGeometry3Dに変換
-            MeshGeometry3D mesh = ConvertToMeshGeometry3DHelper.ConvertToMeshGeometry3D(geomElem);
-
-            // ダイアログを表示
-            Your3DViewerControl viewerControl = new Your3DViewerControl();
-            ((ViewerViewModel)viewerControl.DataContext).ModelGeometry = mesh;
-        
-            Window window = new Window
-            {
-                Title = "My 3D Viewer",
-                Content = viewerControl,
-                Width = 800,
-                Height = 600
-            };
-            window.ShowDialog();
-            
+            ViewerWindow dialog = new ViewerWindow();
+            dialog.ShowDialog();
         }
+        
+        // public void ShowGeometry(GeometryElement geomElem)
+        // {
+        //     // ... (ジオメトリを取得するコード)
+        //
+        //     // ジオメトリをHelix ToolkitのMeshGeometry3Dに変換
+        //     MeshGeometry3D mesh = ConvertToMeshGeometry3DHelper.ConvertToMeshGeometry3D(geomElem);
+        //
+        //     // ダイアログを表示
+        //     Your3DViewerControl viewerControl = new Your3DViewerControl();
+        //     ((ViewerViewModel)viewerControl.DataContext).ModelGeometry = mesh;
+        //
+        //     Window window = new Window
+        //     {
+        //         Title = "My 3D Viewer",
+        //         Content = viewerControl,
+        //         Width = 800,
+        //         Height = 600
+        //     };
+        //     window.ShowDialog();
+        //     
+        // }
     }
     
     

@@ -77,13 +77,9 @@ C:\Users\ysakai\Documents\sakai\practice\revit_family_viewer\revit_family_viewer
 C:\Users\ysakai\Documents\sakai\practice\revit_family_viewer\revit_family_viewer\bin\Debug\zh-CN\AdWindows.resources.dll
 C:\Users\ysakai\Documents\sakai\practice\revit_family_viewer\revit_family_viewer\bin\Debug\zh-TW\AdWindows.resources.dll
 C:\Users\ysakai\Documents\sakai\practice\revit_family_viewer\revit_family_viewer\obj\Debug\revit_family_viewer.csproj.AssemblyReference.cache
-C:\Users\ysakai\Documents\sakai\practice\revit_family_viewer\revit_family_viewer\obj\Debug\Abc.g.cs
-C:\Users\ysakai\Documents\sakai\practice\revit_family_viewer\revit_family_viewer\obj\Debug\Your3DViewerControl.g.cs
 C:\Users\ysakai\Documents\sakai\practice\revit_family_viewer\revit_family_viewer\obj\Debug\GeneratedInternalTypeHelper.g.cs
 C:\Users\ysakai\Documents\sakai\practice\revit_family_viewer\revit_family_viewer\obj\Debug\revit_family_viewer_MarkupCompile.cache
 C:\Users\ysakai\Documents\sakai\practice\revit_family_viewer\revit_family_viewer\obj\Debug\revit_family_viewer_MarkupCompile.lref
-C:\Users\ysakai\Documents\sakai\practice\revit_family_viewer\revit_family_viewer\obj\Debug\Abc.baml
-C:\Users\ysakai\Documents\sakai\practice\revit_family_viewer\revit_family_viewer\obj\Debug\Your3DViewerControl.baml
 C:\Users\ysakai\Documents\sakai\practice\revit_family_viewer\revit_family_viewer\obj\Debug\revit_family_viewer.g.resources
 C:\Users\ysakai\Documents\sakai\practice\revit_family_viewer\revit_family_viewer\obj\Debug\revit_family_viewer.Properties.Resources.resources
 C:\Users\ysakai\Documents\sakai\practice\revit_family_viewer\revit_family_viewer\obj\Debug\revit_family_viewer.csproj.GenerateResource.cache
@@ -94,3 +90,7 @@ C:\Users\ysakai\Documents\sakai\practice\revit_family_viewer\revit_family_viewer
 C:\Users\ysakai\Documents\sakai\practice\revit_family_viewer\revit_family_viewer\obj\Debug\revit_family_viewer.dll
 C:\Users\ysakai\Documents\sakai\practice\revit_family_viewer\revit_family_viewer\obj\Debug\ViewerWindow.g.cs
 C:\Users\ysakai\Documents\sakai\practice\revit_family_viewer\revit_family_viewer\obj\Debug\ViewerWindow.baml
+C:\Users\ysakai\Documents\sakai\practice\revit_family_viewer\revit_family_viewer\obj\Debug\FilteringControl.baml
+C:\Users\ysakai\Documents\sakai\practice\revit_family_viewer\revit_family_viewer\obj\Debug\FamilyTypeFilteringWindow.g.cs
+C:\Users\ysakai\Documents\sakai\practice\revit_family_viewer\revit_family_viewer\obj\Debug\FilteringControl.g.cs
+C:\Users\ysakai\Documents\sakai\practice\revit_family_viewer\revit_family_viewer\obj\Debug\FamilyTypeFilteringWindow.baml
