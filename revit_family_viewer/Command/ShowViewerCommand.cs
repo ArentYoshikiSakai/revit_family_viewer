@@ -14,9 +14,7 @@ namespace revit_family_viewer.Command
     {
         public Result Execute(ExternalCommandData commandData, ref string message, ElementSet elements)
         {
-            // Revitのモデルのジオメトリを取得
             Document doc = commandData.Application.ActiveUIDocument.Document;
-            // ... (ジオメトリを取得するコード)
 
             var viewModel = new ViewerWindow() ;
             var dialog = new ViewerWindow() ;

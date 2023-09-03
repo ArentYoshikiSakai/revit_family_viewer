@@ -14,19 +14,26 @@ namespace revit_family_viewer.Command
   {
     public Result Execute(ExternalCommandData commandData, ref string message, ElementSet elements)
     {
-      // Revitのモデルのジオメトリを取得
       Document doc = commandData.Application.ActiveUIDocument.Document;
-      // ... (ジオメトリを取得するコード)
-
-      var viewModel = new FamilyTypeFilteringViewModel( doc ) ;
-      FilteringControl control = new FilteringControl();
-      control.DataContext = viewModel;
-      
-      FamilyTypeFilteringWindow dialog = new FamilyTypeFilteringWindow() ;
-      dialog.Content = control;
-      dialog.ShowDialog() ;
+      FilteringControl control = SetupFilteringControl(doc);
+      ShowFilteringDialog(control);
 
       return Result.Succeeded;
+    }
+    
+    private FilteringControl SetupFilteringControl(Document doc)
+    {
+      var viewModel = new FamilyTypeFilteringViewModel(doc);
+      FilteringControl control = new FilteringControl();
+      control.DataContext = viewModel;
+      return control;
+    }
+
+    private void ShowFilteringDialog(FilteringControl control)
+    {
+      FamilyTypeFilteringWindow dialog = new FamilyTypeFilteringWindow();
+      dialog.Content = control;
+      dialog.ShowDialog();
     }
   }
     

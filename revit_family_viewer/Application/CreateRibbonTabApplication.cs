@@ -43,17 +43,16 @@ namespace revit_family_viewer.Application
     
     private void AddButtonToRibbon(UIControlledApplication application)
     {
-      var pushButtonDataName = "PushButtonHello" ;
-      var pushButtonDataText = "Hello World" ;
+      var pushButtonDataName = "FamilyTypeViewerButton" ;
+      var pushButtonDataText = "Family Type Viewer Button" ;
       var className = "revit_family_viewer.Command.ShowFilteringCommand";
-      // var className = "revit_family_viewer.Command.ShowViewerCommand";
       PushButtonData pushButtonData = new PushButtonData(pushButtonDataName, pushButtonDataText, FileData.DllFilePath, className);
       PushButton pushButton = _panel.AddItem(pushButtonData) as PushButton;
 
       var viewerTabImagePath = Path.Combine(FileData.ImageFolderPath, FileData.ViewerTabImage);
       BitmapImage image = new BitmapImage(new Uri(viewerTabImagePath));
       pushButton.LargeImage = image;
-      pushButton.ToolTip = "simple push button";
+      pushButton.ToolTip = "Family Type Viewer";
     }
   }
 }

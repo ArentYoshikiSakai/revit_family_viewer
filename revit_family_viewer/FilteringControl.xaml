@@ -14,10 +14,15 @@
         </Grid.RowDefinitions>
 
         <TextBlock Text="Select Family Category:" Grid.Row="0" Margin="0,0,0,10"/>
-        <ComboBox Name="cmbCategory" Grid.Row="1" Margin="0,0,0,10" ItemsSource="{Binding Categories}" DisplayMemberPath="Name"/>
+        <ComboBox Name="cmbCategory" Grid.Row="1" Margin="0,0,0,10" 
+                  ItemsSource="{Binding Categories}" 
+                  DisplayMemberPath="Name" 
+                  SelectedItem="{Binding SelectedCategory}"/>
 
         <TextBlock Text="Select Family Name:" Grid.Row="2" Margin="0,0,0,10"/>
-        <ComboBox Name="cmbFamilyName" Grid.Row="3" Margin="0,0,0,10"/>
+        <ComboBox Name="cmbFamilyName" Grid.Row="3" Margin="0,0,0,10" 
+                  ItemsSource="{Binding Families}" 
+                  DisplayMemberPath="Name"/>
 
         <TextBlock Text="Select Family Type Name:" Grid.Row="4" Margin="0,0,0,10"/>
         <ComboBox Name="cmbFamilyTypeName" Grid.Row="5" Margin="0,0,0,10"/>
