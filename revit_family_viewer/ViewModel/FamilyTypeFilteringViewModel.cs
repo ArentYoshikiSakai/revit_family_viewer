@@ -10,8 +10,8 @@ namespace revit_family_viewer.ViewModel
     private readonly FamilyService _familyService;
     public ObservableCollection<Category> Categories { get; private set; } = new ObservableCollection<Category>();
     
-    private ObservableCollection<Family> _families = new ObservableCollection<Family>();
-    public ObservableCollection<Family> Families
+    private ObservableCollection<FamilySymbol> _families = new ObservableCollection<FamilySymbol>();
+    public ObservableCollection<FamilySymbol> Families
     {
       get { return _families; }
       set
