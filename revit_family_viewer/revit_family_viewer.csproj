@@ -69,6 +69,7 @@
         <Compile Include="Helpers\ConvertToMeshGeometry3DHelper.cs" />
         <Compile Include="Service\CategoryService.cs" />
         <Compile Include="Service\FamilyService.cs" />
+        <Compile Include="Service\FamilyTypeService.cs" />
         <Compile Include="ViewerWindow.xaml.cs">
           <DependentUpon>ViewerWindow.xaml</DependentUpon>
         </Compile>

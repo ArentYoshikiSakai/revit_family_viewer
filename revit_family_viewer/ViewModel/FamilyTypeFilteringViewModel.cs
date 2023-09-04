@@ -9,18 +9,7 @@ namespace revit_family_viewer.ViewModel
   {
     private readonly FamilyService _familyService;
     public ObservableCollection<Category> Categories { get; private set; } = new ObservableCollection<Category>();
-    
-    private ObservableCollection<FamilySymbol> _families = new ObservableCollection<FamilySymbol>();
-    public ObservableCollection<FamilySymbol> Families
-    {
-      get { return _families; }
-      set
-      {
-        _families = value;
-        OnPropertyChanged(nameof(Families));
-      }
-    }
-    
+
     private Category _selectedCategory;
     public Category SelectedCategory
     {
@@ -32,6 +21,28 @@ namespace revit_family_viewer.ViewModel
         UpdateFamilies();
       }
     }
+    
+    private ObservableCollection<Family> _families = new ObservableCollection<Family>();
+    public ObservableCollection<Family> Families
+    {
+      get { return _families; }
+      set
+      {
+        _families = value;
+        OnPropertyChanged(nameof(Families));
+      }
+    }
+    
+    // private ObservableCollection<FamilySymbol> _families = new ObservableCollection<FamilySymbol>();
+    // public ObservableCollection<FamilySymbol> Families
+    // {
+    //   get { return _families; }
+    //   set
+    //   {
+    //     _families = value;
+    //     OnPropertyChanged(nameof(Families));
+    //   }
+    // }
     
     public FamilyTypeFilteringViewModel(Document doc)
     {

@@ -13,11 +13,18 @@ namespace revit_family_viewer.Service
       _document = doc;
     }
 
-    public IList<FamilySymbol> GetFamiliesForCategory(Category category)
+    public IList<Family> GetFamiliesForCategory(Category category)
     {
       BuiltInCategory builtInCategory = (BuiltInCategory)category.Id.IntegerValue;
       // FilteredElementCollector collector = new FilteredElementCollector(_document);
-      FilteredElementCollector collector = new FilteredElementCollector(_document).OfClass(typeof(FamilySymbol)).OfCategory(builtInCategory);
+      FilteredElementCollector collector = new FilteredElementCollector(_document).OfClass(typeof(Family));
+      FilteredElementCollector coallector = new FilteredElementCollector(_document).OfClass(typeof(Family)).WherePasses(new ElementCategoryFilter(builtInCategory));
+      FilteredElementCollector cobllector = new FilteredElementCollector(_document)
+        .OfClass(typeof(Family));
+
+      var filteredFamilies = cobllector.Cast<Family>()
+        .Where(f => f.FamilyCategory.Id.IntegerValue == (int)builtInCategory)
+        .ToList();
       // // コンポーネントファミリの場合
       // if (IsComponentFamilyCategory(builtInCategory))
       // {
@@ -29,8 +36,8 @@ namespace revit_family_viewer.Service
       //   Type systemFamilyType = GetSystemFamilyTypeForCategory(builtInCategory);
       //   collector.OfClass(systemFamilyType);
       // }
-      
-      return collector.Cast<FamilySymbol>().ToList();
+
+      return filteredFamilies ;
     }
     
     private bool IsComponentFamilyCategory(BuiltInCategory category)
