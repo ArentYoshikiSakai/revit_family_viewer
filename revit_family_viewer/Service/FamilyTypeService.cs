@@ -12,13 +12,18 @@ namespace revit_family_viewer.Service
       _document = doc;
     }
 
-    public IList<FamilySymbol> GetFamiliesForCategory(Category category)
+    public IList<FamilySymbol> GetFamiliesForCategory(Family family)
     {
-      BuiltInCategory builtInCategory = (BuiltInCategory)category.Id.IntegerValue;
-      // FilteredElementCollector collector = new FilteredElementCollector(_document);
-      FilteredElementCollector collector = new FilteredElementCollector(_document).OfClass(typeof(FamilySymbol)).OfCategory(builtInCategory);
+      int familyId = family.Id.IntegerValue ;
+      
+      FilteredElementCollector collector = new FilteredElementCollector(_document)
+        .OfClass(typeof(FamilySymbol));
+      
+      var filteredFamilyTypes = collector.Cast<FamilySymbol>()
+        .Where(f => f.Family.Id.IntegerValue == familyId)
+        .ToList();
 
-      return collector.Cast<FamilySymbol>().ToList();
+      return filteredFamilyTypes ;
     }
   }
 }

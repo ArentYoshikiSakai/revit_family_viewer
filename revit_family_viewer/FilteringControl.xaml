@@ -22,10 +22,14 @@
         <TextBlock Text="Select Family Name:" Grid.Row="2" Margin="0,0,0,10"/>
         <ComboBox Name="cmbFamilyName" Grid.Row="3" Margin="0,0,0,10" 
                   ItemsSource="{Binding Families}" 
-                  DisplayMemberPath="Name"/>
+                  DisplayMemberPath="Name"
+                  SelectedItem="{Binding SelectedFamily}"/>
 
         <TextBlock Text="Select Family Type Name:" Grid.Row="4" Margin="0,0,0,10"/>
-        <ComboBox Name="cmbFamilyTypeName" Grid.Row="5" Margin="0,0,0,10"/>
+        <ComboBox Name="cmbFamilyTypeName" Grid.Row="5" Margin="0,0,0,10"
+                  ItemsSource="{Binding FamilyTypes}" 
+                  DisplayMemberPath="Name"
+                  SelectedItem="{Binding SelectedFamilySymbol}"/>
         
         <StackPanel Orientation="Horizontal" Grid.Row="6" HorizontalAlignment="Right">
             <Button Name="btnFilter" Content="Filter" Width="100" Margin="0,0,10,0" Click="btnFilter_Click"/>
