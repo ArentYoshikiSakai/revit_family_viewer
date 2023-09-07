@@ -1,4 +1,5 @@
 ﻿using System.Windows ;
+using revit_family_viewer.ViewModel ;
 
 namespace revit_family_viewer
 {
@@ -7,6 +8,7 @@ namespace revit_family_viewer
     public ViewerWindow()
     {
       InitializeComponent() ;
+      this.DataContext = new ViewerViewModel();
     }
   }
 }

@@ -34,7 +34,7 @@ namespace revit_family_viewer.ViewModel
         UpdateFamilyTypes();
       }
     }
-    
+
     private FamilySymbol _selectedFamilySymbol;
     public FamilySymbol SelectedFamilySymbol
     {
@@ -42,7 +42,7 @@ namespace revit_family_viewer.ViewModel
       set
       {
         _selectedFamilySymbol = value;
-        OnPropertyChanged(nameof(_selectedFamilySymbol));
+        OnPropertyChanged(nameof(SelectedFamilySymbol));
       }
     }
     
@@ -67,18 +67,7 @@ namespace revit_family_viewer.ViewModel
         OnPropertyChanged(nameof(FamilyTypes));
       }
     }
-    
-    // private ObservableCollection<FamilySymbol> _families = new ObservableCollection<FamilySymbol>();
-    // public ObservableCollection<FamilySymbol> Families
-    // {
-    //   get { return _families; }
-    //   set
-    //   {
-    //     _families = value;
-    //     OnPropertyChanged(nameof(Families));
-    //   }
-    // }
-    
+
     public FamilyTypeFilteringViewModel(Document doc)
     {
       var categoryService = new CategoryService(doc) ;

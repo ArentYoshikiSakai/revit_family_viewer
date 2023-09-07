@@ -12,44 +12,59 @@ namespace revit_family_viewer.Command
     [Transaction(TransactionMode.ReadOnly)]
     public class ShowViewerCommand : IExternalCommand
     {
+        private FamilySymbol _selectedFamilySymbol;
+
+        public FamilySymbol SelectedFamilySymbol
+        {
+            get { return _selectedFamilySymbol; }
+            set { _selectedFamilySymbol = value; }
+        }
+        
+        public ShowViewerCommand(FamilySymbol selectedFamilySymbol)
+        {
+            _selectedFamilySymbol = selectedFamilySymbol;
+        }
+
         public Result Execute(ExternalCommandData commandData, ref string message, ElementSet elements)
         {
-            Document doc = commandData.Application.ActiveUIDocument.Document;
-
-            var viewModel = new ViewerWindow() ;
-            var dialog = new ViewerWindow() ;
-            dialog.ShowDialog() ;
+            // ジオメトリのオプションを設定します。
+            Options geomOptions = new Options();
+            geomOptions.ComputeReferences = true;
+            geomOptions.DetailLevel = ViewDetailLevel.Medium; // 詳細度を設定。必要に応じて変更可能。
+            
+            GeometryElement geomElem = _selectedFamilySymbol.get_Geometry(geomOptions);
+            ShowGeometry( geomElem ) ;
 
             return Result.Succeeded;
         }
-        
+
         public void ShowDialogWithoutArgs()
         {
-            ViewerWindow dialog = new ViewerWindow();
-            dialog.ShowDialog();
+            
         }
+
         
-        // public void ShowGeometry(GeometryElement geomElem)
-        // {
-        //     // ... (ジオメトリを取得するコード)
-        //
-        //     // ジオメトリをHelix ToolkitのMeshGeometry3Dに変換
-        //     MeshGeometry3D mesh = ConvertToMeshGeometry3DHelper.ConvertToMeshGeometry3D(geomElem);
-        //
-        //     // ダイアログを表示
-        //     Your3DViewerControl viewerControl = new Your3DViewerControl();
-        //     ((ViewerViewModel)viewerControl.DataContext).ModelGeometry = mesh;
-        //
-        //     Window window = new Window
-        //     {
-        //         Title = "My 3D Viewer",
-        //         Content = viewerControl,
-        //         Width = 800,
-        //         Height = 600
-        //     };
-        //     window.ShowDialog();
-        //     
-        // }
+        public void ShowGeometry(GeometryElement geomElem)
+        {
+            // ... (ジオメトリを取得するコード)
+        
+            // ジオメトリをHelix ToolkitのMeshGeometry3Dに変換
+            MeshGeometry3D mesh = ConvertToMeshGeometry3DHelper.ConvertToMeshGeometry3D(geomElem);
+        
+            // ダイアログを表示
+            ViewerWindow viewerWindow = new ViewerWindow();
+            ((ViewerViewModel)viewerWindow.DataContext).ModelGeometry = mesh;
+        
+            // Window window = new Window
+            // {
+            //     Title = "My 3D Viewer",
+            //     Content = viewerWindow,
+            //     Width = 800,
+            //     Height = 600
+            // };
+            // window.ShowDialog();
+            
+        }
     }
     
     
