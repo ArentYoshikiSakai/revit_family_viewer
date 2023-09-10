@@ -27,43 +27,22 @@ namespace revit_family_viewer.Command
 
         public Result Execute(ExternalCommandData commandData, ref string message, ElementSet elements)
         {
-            // ジオメトリのオプションを設定します。
             Options geomOptions = new Options();
             geomOptions.ComputeReferences = true;
-            geomOptions.DetailLevel = ViewDetailLevel.Medium; // 詳細度を設定。必要に応じて変更可能。
+            geomOptions.DetailLevel = ViewDetailLevel.Medium;
             
             GeometryElement geomElem = _selectedFamilySymbol.get_Geometry(geomOptions);
             ShowGeometry( geomElem ) ;
 
             return Result.Succeeded;
         }
-
-        public void ShowDialogWithoutArgs()
-        {
-            
-        }
-
         
         public void ShowGeometry(GeometryElement geomElem)
         {
-            // ... (ジオメトリを取得するコード)
-        
-            // ジオメトリをHelix ToolkitのMeshGeometry3Dに変換
             MeshGeometry3D mesh = ConvertToMeshGeometry3DHelper.ConvertToMeshGeometry3D(geomElem);
-        
-            // ダイアログを表示
+            
             ViewerWindow viewerWindow = new ViewerWindow();
             ((ViewerViewModel)viewerWindow.DataContext).ModelGeometry = mesh;
-        
-            // Window window = new Window
-            // {
-            //     Title = "My 3D Viewer",
-            //     Content = viewerWindow,
-            //     Width = 800,
-            //     Height = 600
-            // };
-            // window.ShowDialog();
-            
         }
     }
     

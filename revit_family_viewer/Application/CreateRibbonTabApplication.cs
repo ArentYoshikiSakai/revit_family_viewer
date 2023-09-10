@@ -18,7 +18,7 @@ namespace revit_family_viewer.Application
     {
       try {
         CreateRibbonTab(application);
-        AddButtonToRibbon(application);
+        AddButtonToRibbon();
 
         return Result.Succeeded ;
       }
@@ -41,7 +41,7 @@ namespace revit_family_viewer.Application
       _panel = application.CreateRibbonPanel(tabName, panelName);
     }
     
-    private void AddButtonToRibbon(UIControlledApplication application)
+    private void AddButtonToRibbon()
     {
       var pushButtonDataName = "FamilyTypeViewerButton" ;
       var pushButtonDataText = "Family Type Viewer Button" ;
