@@ -10,9 +10,9 @@ namespace revit_family_viewer.ViewModel
     {
 
         
-        private MeshGeometry3D _modelGeometry;
+        private Model3D _modelGeometry;
 
-        public MeshGeometry3D ModelGeometry
+        public Model3D ModelGeometry
         {
             get { return _modelGeometry; }
             set

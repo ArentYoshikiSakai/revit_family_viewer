@@ -42,7 +42,7 @@ namespace revit_family_viewer.Command
             MeshGeometry3D mesh = ConvertToMeshGeometry3DHelper.ConvertToMeshGeometry3D(geomElem);
             
             ViewerWindow viewerWindow = new ViewerWindow();
-            ((ViewerViewModel)viewerWindow.DataContext).ModelGeometry = mesh;
+            // ((ViewerViewModel)viewerWindow.DataContext).ModelGeometry = mesh;
         }
     }
     

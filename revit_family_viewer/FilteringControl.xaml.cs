@@ -1,8 +1,10 @@
 ﻿using System.Windows ;
 using System.Windows.Controls;
+using System.Windows.Media ;
 using System.Windows.Media.Media3D ;
 using revit_family_viewer.Command ;
 using Autodesk.Revit.DB;
+using HelixToolkit.Wpf ;
 using revit_family_viewer.Helpers ;
 using revit_family_viewer.ViewModel ;
 
@@ -63,13 +65,16 @@ namespace revit_family_viewer
 
         public void ShowGeometry(GeometryElement geomElem, ViewerWindow viewerWindow)
         {
-            // ... (ジオメトリを取得するコード)
-        
-            // ジオメトリをHelix ToolkitのMeshGeometry3Dに変換
+            var modelGroup = new Model3DGroup() ;
+
             MeshGeometry3D mesh = ConvertToMeshGeometry3DHelper.ConvertToMeshGeometry3D(geomElem);
-        
-            // ダイアログを表示
-            ((ViewerViewModel)viewerWindow.DataContext).ModelGeometry = mesh;
+
+            var greenMaterial = MaterialHelper.CreateMaterial( Colors.Green ) ;
+            var insideMaterial = MaterialHelper.CreateMaterial( Colors.Yellow ) ;
+            
+            modelGroup.Children.Add(new GeometryModel3D {Geometry = mesh, Material = greenMaterial, BackMaterial = insideMaterial}  );
+            
+            ((ViewerViewModel)viewerWindow.DataContext).ModelGeometry = modelGroup;
             
         }
     }
