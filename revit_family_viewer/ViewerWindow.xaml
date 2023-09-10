@@ -10,25 +10,12 @@
     </Window.DataContext>
     
     <Grid>
-        <helix:HelixViewport3D Name="Viewport3D" ZoomExtentsWhenLoaded="True">
-            <!-- カメラの設定 -->
-            <helix:HelixViewport3D.Camera>
-                <PerspectiveCamera Position="0,0,5" LookDirection="0,0,-1" UpDirection="0,1,0" />
-            </helix:HelixViewport3D.Camera>
+        <helix:HelixViewport3D>
             
-            <!-- ライティングの設定 -->
-            <helix:SunLight/>
+            <helix:GridLinesVisual3D Width="8" Length="8" MinorDistance="1" MajorDistance="1" Thickness="0.01"/>
             
-            <!-- 3D モデルの表示 -->
-            <helix:MeshVisual3D Content="{Binding ModelGeometry}">
-                <!-- 3D モデルの位置やスケールを調整するための Transform -->
-                <helix:MeshVisual3D.Transform>
-                    <Transform3DGroup>
-                        <TranslateTransform3D OffsetX="0" OffsetY="0" OffsetZ="0"/>
-                        <ScaleTransform3D ScaleX="1" ScaleY="1" ScaleZ="1"/>
-                    </Transform3DGroup>
-                </helix:MeshVisual3D.Transform>
-            </helix:MeshVisual3D>
+            <ModelVisual3D Content="{Binding ModelGeometry}"/> 
+            
         </helix:HelixViewport3D>
     </Grid>
 </Window>

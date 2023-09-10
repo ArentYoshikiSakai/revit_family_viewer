@@ -38,8 +38,6 @@ namespace revit_family_viewer
                     var a = ( (ViewerViewModel)viewerWindow.DataContext ).ModelGeometry ;
                 }
 
-                viewerWindow.Viewport3D.ZoomExtents();
-
                 viewerWindow.ShowDialog();
             }
             
