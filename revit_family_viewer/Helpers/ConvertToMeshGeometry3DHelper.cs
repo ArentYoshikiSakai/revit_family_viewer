@@ -18,6 +18,7 @@ namespace revit_family_viewer.Helpers
                         Mesh resultMesh = face.Triangulate();
                         if (resultMesh != null)
                         {
+                            int baseIndex = mesh.Positions.Count;
                             foreach (XYZ vertex in resultMesh.Vertices)
                             {
                                 mesh.Positions.Add(new Point3D(vertex.X, vertex.Y, vertex.Z));
@@ -27,9 +28,9 @@ namespace revit_family_viewer.Helpers
                             for (int i = 0; i < numTriangles; i++)
                             {
                                 MeshTriangle triangle = resultMesh.get_Triangle(i);
-                                mesh.TriangleIndices.Add((int)triangle.get_Index(0));
-                                mesh.TriangleIndices.Add((int)triangle.get_Index(1));
-                                mesh.TriangleIndices.Add((int)triangle.get_Index(2));
+                                mesh.TriangleIndices.Add(baseIndex + (int)triangle.get_Index(0));
+                                mesh.TriangleIndices.Add(baseIndex + (int)triangle.get_Index(1));
+                                mesh.TriangleIndices.Add(baseIndex + (int)triangle.get_Index(2));
                             }
                         }
                     }
@@ -38,5 +39,6 @@ namespace revit_family_viewer.Helpers
 
             return mesh;
         }
+
     }
 }

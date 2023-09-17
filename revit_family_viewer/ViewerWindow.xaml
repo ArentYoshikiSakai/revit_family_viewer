@@ -16,6 +16,20 @@
             
             <ModelVisual3D Content="{Binding ModelGeometry}"/> 
             
+            <!-- Directional Light -->
+            <ModelVisual3D>
+                <ModelVisual3D.Content>
+                    <DirectionalLight Direction="-1,-1,-1" Color="White" />
+                </ModelVisual3D.Content>
+            </ModelVisual3D>
+
+            <!-- Ambient Light -->
+            <ModelVisual3D>
+                <ModelVisual3D.Content>
+                    <AmbientLight Color="#666666" />
+                </ModelVisual3D.Content>
+            </ModelVisual3D>
+            
         </helix:HelixViewport3D>
     </Grid>
 </Window>
